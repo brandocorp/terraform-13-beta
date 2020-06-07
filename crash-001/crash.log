@@ -1,0 +1,464 @@
+2020/06/07 11:35:59 [INFO] Terraform version: 0.13.0 beta1 
+2020/06/07 11:35:59 [INFO] Go runtime version: go1.14.2
+2020/06/07 11:35:59 [INFO] CLI args: []string{"/home/brandocorp/bin/terraform", "plan"}
+2020/06/07 11:35:59 [DEBUG] Attempting to open CLI config file: /home/brandocorp/.terraformrc
+2020/06/07 11:35:59 [DEBUG] File doesn't exist, but doesn't need to. Ignoring.
+2020/06/07 11:35:59 [DEBUG] ignoring non-existing provider search directory terraform.d/plugins
+2020/06/07 11:35:59 [DEBUG] ignoring non-existing provider search directory /home/brandocorp/.local/share/terraform/plugins
+2020/06/07 11:35:59 [DEBUG] ignoring non-existing provider search directory /usr/share/usr/share/xsessions/plasma/terraform/plugins
+2020/06/07 11:35:59 [DEBUG] ignoring non-existing provider search directory /home/brandocorp/.local/share/flatpak/exports/share/terraform/plugins
+2020/06/07 11:35:59 [DEBUG] ignoring non-existing provider search directory /var/lib/flatpak/exports/share/terraform/plugins
+2020/06/07 11:35:59 [DEBUG] ignoring non-existing provider search directory /usr/local/share/terraform/plugins
+2020/06/07 11:35:59 [DEBUG] ignoring non-existing provider search directory /usr/share/terraform/plugins
+2020/06/07 11:35:59 [INFO] CLI command args: []string{"plan"}
+2020/06/07 11:35:59 [TRACE] Meta.Backend: no config given or present on disk, so returning nil config
+2020/06/07 11:35:59 [TRACE] Meta.Backend: backend has not previously been initialized in this working directory
+2020/06/07 11:35:59 [DEBUG] New state was assigned lineage "b124991d-edad-e415-2d12-81fcdfd24314"
+2020/06/07 11:35:59 [TRACE] Meta.Backend: using default local state only (no backend configuration, and no existing initialized backend)
+2020/06/07 11:35:59 [TRACE] Meta.Backend: instantiated backend of type <nil>
+2020/06/07 11:35:59 [DEBUG] checking for provisioner in "."
+2020/06/07 11:35:59 [DEBUG] checking for provisioner in "/home/brandocorp/bin"
+2020/06/07 11:35:59 [INFO] Failed to read plugin lock file .terraform/plugins/linux_amd64/lock.json: open .terraform/plugins/linux_amd64/lock.json: no such file or directory
+2020/06/07 11:35:59 [TRACE] Meta.Backend: backend <nil> does not support operations, so wrapping it in a local backend
+2020/06/07 11:35:59 [INFO] backend/local: starting Plan operation
+2020/06/07 11:35:59 [TRACE] backend/local: requesting state manager for workspace "default"
+2020/06/07 11:35:59 [TRACE] backend/local: state manager for workspace "default" will:
+ - read initial snapshot from terraform.tfstate
+ - write new snapshots to terraform.tfstate
+ - create any backup at terraform.tfstate.backup
+2020/06/07 11:35:59 [TRACE] backend/local: requesting state lock for workspace "default"
+2020/06/07 11:35:59 [TRACE] statemgr.Filesystem: preparing to manage state snapshots at terraform.tfstate
+2020/06/07 11:35:59 [TRACE] statemgr.Filesystem: no previously-stored snapshot exists
+2020/06/07 11:35:59 [TRACE] statemgr.Filesystem: locking terraform.tfstate using fcntl flock
+2020/06/07 11:35:59 [TRACE] statemgr.Filesystem: writing lock metadata to .terraform.tfstate.lock.info
+2020/06/07 11:35:59 [TRACE] backend/local: reading remote state for workspace "default"
+2020/06/07 11:35:59 [TRACE] statemgr.Filesystem: reading latest snapshot from terraform.tfstate
+2020/06/07 11:35:59 [TRACE] statemgr.Filesystem: snapshot file has nil snapshot, but that's okay
+2020/06/07 11:35:59 [TRACE] statemgr.Filesystem: read nil snapshot
+2020/06/07 11:35:59 [TRACE] backend/local: retrieving local state snapshot for workspace "default"
+2020/06/07 11:35:59 [TRACE] backend/local: building context for current working directory
+2020/06/07 11:35:59 [TRACE] terraform.NewContext: starting
+2020/06/07 11:35:59 [TRACE] terraform.NewContext: loading provider schemas
+2020/06/07 11:35:59 [TRACE] terraform.NewContext: complete
+2020/06/07 11:35:59 [TRACE] backend/local: finished building terraform.Context
+2020/06/07 11:35:59 [TRACE] backend/local: requesting interactive input, if necessary
+2020/06/07 11:35:59 [TRACE] Context.Input: Prompting for provider arguments
+2020/06/07 11:35:59 [TRACE] backend/local: running validation operation
+2020/06/07 11:35:59 [INFO] terraform: building graph: GraphTypeValidate
+2020/06/07 11:35:59 [TRACE] Executing graph transform *terraform.ConfigTransformer
+2020/06/07 11:35:59 [TRACE] ConfigTransformer: Starting for path: 
+2020/06/07 11:35:59 [TRACE] ConfigTransformer: Starting for path: module.shapes
+2020/06/07 11:35:59 [TRACE] ConfigTransformer: Starting for path: module.shapes.module.square
+2020/06/07 11:35:59 [TRACE] ConfigTransformer: Starting for path: module.shapes.module.circle
+2020/06/07 11:35:59 [TRACE] Completed graph transform *terraform.ConfigTransformer (no changes)
+2020/06/07 11:35:59 [TRACE] Executing graph transform *terraform.LocalTransformer
+2020/06/07 11:35:59 [TRACE] Completed graph transform *terraform.LocalTransformer with new graph:
+  module.shapes.module.circle.local.pi (expand) - *terraform.nodeExpandLocal
+  ------
+2020/06/07 11:35:59 [TRACE] Executing graph transform *terraform.OutputTransformer
+2020/06/07 11:35:59 [TRACE] OutputTransformer: adding area as *terraform.nodeExpandOutput
+2020/06/07 11:35:59 [TRACE] OutputTransformer: adding circle_area as *terraform.nodeExpandOutput
+2020/06/07 11:35:59 [TRACE] OutputTransformer: adding square_area as *terraform.nodeExpandOutput
+2020/06/07 11:35:59 [TRACE] Completed graph transform *terraform.OutputTransformer with new graph:
+  module.shapes.module.circle.local.pi (expand) - *terraform.nodeExpandLocal
+  module.shapes.module.circle.output.area (expand) - *terraform.nodeExpandOutput
+  module.shapes.output.circle_area (expand) - *terraform.nodeExpandOutput
+  module.shapes.output.square_area (expand) - *terraform.nodeExpandOutput
+  ------
+2020/06/07 11:35:59 [TRACE] Executing graph transform *terraform.OrphanResourceInstanceTransformer
+2020/06/07 11:35:59 [TRACE] Completed graph transform *terraform.OrphanResourceInstanceTransformer (no changes)
+2020/06/07 11:35:59 [TRACE] Executing graph transform *terraform.StateTransformer
+2020/06/07 11:35:59 [TRACE] StateTransformer: state is empty, so nothing to do
+2020/06/07 11:35:59 [TRACE] Completed graph transform *terraform.StateTransformer (no changes)
+2020/06/07 11:35:59 [TRACE] Executing graph transform *terraform.OrphanOutputTransformer
+2020/06/07 11:35:59 [TRACE] Completed graph transform *terraform.OrphanOutputTransformer (no changes)
+2020/06/07 11:35:59 [TRACE] Executing graph transform *terraform.AttachResourceConfigTransformer
+2020/06/07 11:35:59 [TRACE] Completed graph transform *terraform.AttachResourceConfigTransformer (no changes)
+2020/06/07 11:35:59 [TRACE] Executing graph transform *terraform.AttachStateTransformer
+2020/06/07 11:35:59 [TRACE] Completed graph transform *terraform.AttachStateTransformer (no changes)
+2020/06/07 11:35:59 [TRACE] Executing graph transform *terraform.RootVariableTransformer
+2020/06/07 11:35:59 [TRACE] Completed graph transform *terraform.RootVariableTransformer (no changes)
+2020/06/07 11:35:59 [TRACE] Executing graph transform *terraform.MissingProvisionerTransformer
+2020/06/07 11:35:59 [TRACE] Completed graph transform *terraform.MissingProvisionerTransformer (no changes)
+2020/06/07 11:35:59 [TRACE] Executing graph transform *terraform.ProvisionerTransformer
+2020/06/07 11:35:59 [TRACE] Completed graph transform *terraform.ProvisionerTransformer (no changes)
+2020/06/07 11:35:59 [TRACE] Executing graph transform *terraform.ModuleVariableTransformer
+2020/06/07 11:35:59 [TRACE] Completed graph transform *terraform.ModuleVariableTransformer with new graph:
+  module.shapes.module.circle.local.pi (expand) - *terraform.nodeExpandLocal
+  module.shapes.module.circle.output.area (expand) - *terraform.nodeExpandOutput
+  module.shapes.module.circle.var.radius (expand) - *terraform.nodeExpandModuleVariable
+  module.shapes.module.square.var.length (expand) - *terraform.nodeExpandModuleVariable
+  module.shapes.output.circle_area (expand) - *terraform.nodeExpandOutput
+  module.shapes.output.square_area (expand) - *terraform.nodeExpandOutput
+  module.shapes.var.circle (expand) - *terraform.nodeExpandModuleVariable
+  module.shapes.var.square (expand) - *terraform.nodeExpandModuleVariable
+  ------
+2020/06/07 11:35:59 [TRACE] Executing graph transform *terraform.graphTransformerMulti
+2020/06/07 11:35:59 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ProviderConfigTransformer
+2020/06/07 11:35:59 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ProviderConfigTransformer with new graph:
+  module.shapes.module.circle.local.pi (expand) - *terraform.nodeExpandLocal
+  module.shapes.module.circle.output.area (expand) - *terraform.nodeExpandOutput
+  module.shapes.module.circle.var.radius (expand) - *terraform.nodeExpandModuleVariable
+  module.shapes.module.square.var.length (expand) - *terraform.nodeExpandModuleVariable
+  module.shapes.output.circle_area (expand) - *terraform.nodeExpandOutput
+  module.shapes.output.square_area (expand) - *terraform.nodeExpandOutput
+  module.shapes.var.circle (expand) - *terraform.nodeExpandModuleVariable
+  module.shapes.var.square (expand) - *terraform.nodeExpandModuleVariable
+  ------
+2020/06/07 11:35:59 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.MissingProviderTransformer
+2020/06/07 11:35:59 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.MissingProviderTransformer (no changes)
+2020/06/07 11:35:59 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ProviderTransformer
+2020/06/07 11:35:59 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ProviderTransformer (no changes)
+2020/06/07 11:35:59 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.PruneProviderTransformer
+2020/06/07 11:35:59 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.PruneProviderTransformer (no changes)
+2020/06/07 11:35:59 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ParentProviderTransformer
+2020/06/07 11:35:59 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ParentProviderTransformer (no changes)
+2020/06/07 11:35:59 [TRACE] Completed graph transform *terraform.graphTransformerMulti (no changes)
+2020/06/07 11:35:59 [TRACE] Executing graph transform *terraform.RemovedModuleTransformer
+2020/06/07 11:35:59 [TRACE] Completed graph transform *terraform.RemovedModuleTransformer (no changes)
+2020/06/07 11:35:59 [TRACE] Executing graph transform *terraform.AttachSchemaTransformer
+2020/06/07 11:35:59 [TRACE] Completed graph transform *terraform.AttachSchemaTransformer (no changes)
+2020/06/07 11:35:59 [TRACE] Executing graph transform *terraform.ModuleExpansionTransformer
+2020/06/07 11:35:59 [TRACE] ModuleExpansionTransformer: Added module.shapes as *terraform.nodeValidateModule
+2020/06/07 11:35:59 [TRACE] ModuleExpansionTransformer: module.shapes.var.circle (expand) must wait for expansion of module.shapes
+2020/06/07 11:35:59 [TRACE] ModuleExpansionTransformer: module.shapes.output.circle_area (expand) must wait for expansion of module.shapes
+2020/06/07 11:35:59 [TRACE] ModuleExpansionTransformer: module.shapes.var.square (expand) must wait for expansion of module.shapes
+2020/06/07 11:35:59 [TRACE] ModuleExpansionTransformer: module.shapes (close) must wait for expansion of module.shapes
+2020/06/07 11:35:59 [TRACE] ModuleExpansionTransformer: module.shapes.output.square_area (expand) must wait for expansion of module.shapes
+2020/06/07 11:35:59 [TRACE] ModuleExpansionTransformer: Added module.shapes.module.circle as *terraform.nodeValidateModule
+2020/06/07 11:35:59 [TRACE] ModuleExpansionTransformer: module.shapes.module.circle (expand) must wait for expansion of module.shapes (expand)
+2020/06/07 11:35:59 [TRACE] ModuleExpansionTransformer: module.shapes.module.circle (close) must wait for expansion of module.shapes.module.circle
+2020/06/07 11:35:59 [TRACE] ModuleExpansionTransformer: module.shapes.module.circle.output.area (expand) must wait for expansion of module.shapes.module.circle
+2020/06/07 11:35:59 [TRACE] ModuleExpansionTransformer: module.shapes.module.circle.local.pi (expand) must wait for expansion of module.shapes.module.circle
+2020/06/07 11:35:59 [TRACE] ModuleExpansionTransformer: module.shapes.module.circle.var.radius (expand) must wait for expansion of module.shapes.module.circle
+2020/06/07 11:35:59 [TRACE] Completed graph transform *terraform.ModuleExpansionTransformer with new graph:
+  module.shapes (close) - *terraform.nodeCloseModule
+    module.shapes (expand) - *terraform.nodeValidateModule
+    module.shapes.module.circle (close) - *terraform.nodeCloseModule
+    module.shapes.output.circle_area (expand) - *terraform.nodeExpandOutput
+    module.shapes.output.square_area (expand) - *terraform.nodeExpandOutput
+    module.shapes.var.circle (expand) - *terraform.nodeExpandModuleVariable
+    module.shapes.var.square (expand) - *terraform.nodeExpandModuleVariable
+  module.shapes (expand) - *terraform.nodeValidateModule
+  module.shapes.module.circle (close) - *terraform.nodeCloseModule
+    module.shapes.module.circle (expand) - *terraform.nodeValidateModule
+    module.shapes.module.circle.local.pi (expand) - *terraform.nodeExpandLocal
+    module.shapes.module.circle.output.area (expand) - *terraform.nodeExpandOutput
+    module.shapes.module.circle.var.radius (expand) - *terraform.nodeExpandModuleVariable
+  module.shapes.module.circle (expand) - *terraform.nodeValidateModule
+    module.shapes (expand) - *terraform.nodeValidateModule
+  module.shapes.module.circle.local.pi (expand) - *terraform.nodeExpandLocal
+    module.shapes.module.circle (expand) - *terraform.nodeValidateModule
+  module.shapes.module.circle.output.area (expand) - *terraform.nodeExpandOutput
+    module.shapes.module.circle (expand) - *terraform.nodeValidateModule
+  module.shapes.module.circle.var.radius (expand) - *terraform.nodeExpandModuleVariable
+    module.shapes.module.circle (expand) - *terraform.nodeValidateModule
+  module.shapes.module.square.var.length (expand) - *terraform.nodeExpandModuleVariable
+  module.shapes.output.circle_area (expand) - *terraform.nodeExpandOutput
+    module.shapes (expand) - *terraform.nodeValidateModule
+  module.shapes.output.square_area (expand) - *terraform.nodeExpandOutput
+    module.shapes (expand) - *terraform.nodeValidateModule
+  module.shapes.var.circle (expand) - *terraform.nodeExpandModuleVariable
+    module.shapes (expand) - *terraform.nodeValidateModule
+  module.shapes.var.square (expand) - *terraform.nodeExpandModuleVariable
+    module.shapes (expand) - *terraform.nodeValidateModule
+  ------
+2020/06/07 11:35:59 [TRACE] Executing graph transform *terraform.ReferenceTransformer
+2020/06/07 11:35:59 [DEBUG] ReferenceTransformer: "module.shapes.output.circle_area (expand)" references: [module.shapes.module.circle.output.area (expand)]
+2020/06/07 11:35:59 [DEBUG] ReferenceTransformer: "module.shapes.module.circle.var.radius (expand)" references: [module.shapes.var.circle (expand)]
+2020/06/07 11:35:59 [DEBUG] ReferenceTransformer: "module.shapes.var.circle (expand)" references: []
+2020/06/07 11:35:59 [DEBUG] ReferenceTransformer: "module.shapes (expand)" references: []
+2020/06/07 11:35:59 [DEBUG] ReferenceTransformer: "module.shapes.module.circle.local.pi (expand)" references: []
+2020/06/07 11:35:59 [DEBUG] ReferenceTransformer: "module.shapes.output.square_area (expand)" references: []
+2020/06/07 11:35:59 [DEBUG] ReferenceTransformer: "module.shapes.module.square.var.length (expand)" references: [module.shapes.var.square (expand)]
+2020/06/07 11:35:59 [DEBUG] ReferenceTransformer: "module.shapes.var.square (expand)" references: []
+2020/06/07 11:35:59 [DEBUG] ReferenceTransformer: "module.shapes (close)" references: []
+2020/06/07 11:35:59 [DEBUG] ReferenceTransformer: "module.shapes.module.circle (expand)" references: []
+2020/06/07 11:35:59 [DEBUG] ReferenceTransformer: "module.shapes.module.circle (close)" references: []
+2020/06/07 11:35:59 [WARN] ReferenceTransformer: reference not found: "var.radis"
+2020/06/07 11:35:59 [DEBUG] ReferenceTransformer: "module.shapes.module.circle.output.area (expand)" references: [module.shapes.module.circle.local.pi (expand)]
+2020/06/07 11:35:59 [TRACE] Completed graph transform *terraform.ReferenceTransformer with new graph:
+  module.shapes (close) - *terraform.nodeCloseModule
+    module.shapes (expand) - *terraform.nodeValidateModule
+    module.shapes.module.circle (close) - *terraform.nodeCloseModule
+    module.shapes.output.circle_area (expand) - *terraform.nodeExpandOutput
+    module.shapes.output.square_area (expand) - *terraform.nodeExpandOutput
+    module.shapes.var.circle (expand) - *terraform.nodeExpandModuleVariable
+    module.shapes.var.square (expand) - *terraform.nodeExpandModuleVariable
+  module.shapes (expand) - *terraform.nodeValidateModule
+  module.shapes.module.circle (close) - *terraform.nodeCloseModule
+    module.shapes.module.circle (expand) - *terraform.nodeValidateModule
+    module.shapes.module.circle.local.pi (expand) - *terraform.nodeExpandLocal
+    module.shapes.module.circle.output.area (expand) - *terraform.nodeExpandOutput
+    module.shapes.module.circle.var.radius (expand) - *terraform.nodeExpandModuleVariable
+  module.shapes.module.circle (expand) - *terraform.nodeValidateModule
+    module.shapes (expand) - *terraform.nodeValidateModule
+  module.shapes.module.circle.local.pi (expand) - *terraform.nodeExpandLocal
+    module.shapes.module.circle (expand) - *terraform.nodeValidateModule
+  module.shapes.module.circle.output.area (expand) - *terraform.nodeExpandOutput
+    module.shapes.module.circle (expand) - *terraform.nodeValidateModule
+    module.shapes.module.circle.local.pi (expand) - *terraform.nodeExpandLocal
+  module.shapes.module.circle.var.radius (expand) - *terraform.nodeExpandModuleVariable
+    module.shapes.module.circle (expand) - *terraform.nodeValidateModule
+    module.shapes.var.circle (expand) - *terraform.nodeExpandModuleVariable
+  module.shapes.module.square.var.length (expand) - *terraform.nodeExpandModuleVariable
+    module.shapes.var.square (expand) - *terraform.nodeExpandModuleVariable
+  module.shapes.output.circle_area (expand) - *terraform.nodeExpandOutput
+    module.shapes (expand) - *terraform.nodeValidateModule
+    module.shapes.module.circle.output.area (expand) - *terraform.nodeExpandOutput
+  module.shapes.output.square_area (expand) - *terraform.nodeExpandOutput
+    module.shapes (expand) - *terraform.nodeValidateModule
+  module.shapes.var.circle (expand) - *terraform.nodeExpandModuleVariable
+    module.shapes (expand) - *terraform.nodeValidateModule
+  module.shapes.var.square (expand) - *terraform.nodeExpandModuleVariable
+    module.shapes (expand) - *terraform.nodeValidateModule
+  ------
+2020/06/07 11:35:59 [TRACE] Executing graph transform *terraform.attachDataResourceDependenciesTransformer
+2020/06/07 11:35:59 [TRACE] Completed graph transform *terraform.attachDataResourceDependenciesTransformer (no changes)
+2020/06/07 11:35:59 [TRACE] Executing graph transform *terraform.CountBoundaryTransformer
+2020/06/07 11:35:59 [TRACE] Completed graph transform *terraform.CountBoundaryTransformer with new graph:
+  meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    module.shapes (close) - *terraform.nodeCloseModule
+    module.shapes (expand) - *terraform.nodeValidateModule
+    module.shapes.module.circle (close) - *terraform.nodeCloseModule
+    module.shapes.module.circle (expand) - *terraform.nodeValidateModule
+    module.shapes.module.circle.local.pi (expand) - *terraform.nodeExpandLocal
+    module.shapes.module.circle.output.area (expand) - *terraform.nodeExpandOutput
+    module.shapes.module.circle.var.radius (expand) - *terraform.nodeExpandModuleVariable
+    module.shapes.module.square.var.length (expand) - *terraform.nodeExpandModuleVariable
+    module.shapes.output.circle_area (expand) - *terraform.nodeExpandOutput
+    module.shapes.output.square_area (expand) - *terraform.nodeExpandOutput
+    module.shapes.var.circle (expand) - *terraform.nodeExpandModuleVariable
+    module.shapes.var.square (expand) - *terraform.nodeExpandModuleVariable
+  module.shapes (close) - *terraform.nodeCloseModule
+    module.shapes (expand) - *terraform.nodeValidateModule
+    module.shapes.module.circle (close) - *terraform.nodeCloseModule
+    module.shapes.output.circle_area (expand) - *terraform.nodeExpandOutput
+    module.shapes.output.square_area (expand) - *terraform.nodeExpandOutput
+    module.shapes.var.circle (expand) - *terraform.nodeExpandModuleVariable
+    module.shapes.var.square (expand) - *terraform.nodeExpandModuleVariable
+  module.shapes (expand) - *terraform.nodeValidateModule
+  module.shapes.module.circle (close) - *terraform.nodeCloseModule
+    module.shapes.module.circle (expand) - *terraform.nodeValidateModule
+    module.shapes.module.circle.local.pi (expand) - *terraform.nodeExpandLocal
+    module.shapes.module.circle.output.area (expand) - *terraform.nodeExpandOutput
+    module.shapes.module.circle.var.radius (expand) - *terraform.nodeExpandModuleVariable
+  module.shapes.module.circle (expand) - *terraform.nodeValidateModule
+    module.shapes (expand) - *terraform.nodeValidateModule
+  module.shapes.module.circle.local.pi (expand) - *terraform.nodeExpandLocal
+    module.shapes.module.circle (expand) - *terraform.nodeValidateModule
+  module.shapes.module.circle.output.area (expand) - *terraform.nodeExpandOutput
+    module.shapes.module.circle (expand) - *terraform.nodeValidateModule
+    module.shapes.module.circle.local.pi (expand) - *terraform.nodeExpandLocal
+  module.shapes.module.circle.var.radius (expand) - *terraform.nodeExpandModuleVariable
+    module.shapes.module.circle (expand) - *terraform.nodeValidateModule
+    module.shapes.var.circle (expand) - *terraform.nodeExpandModuleVariable
+  module.shapes.module.square.var.length (expand) - *terraform.nodeExpandModuleVariable
+    module.shapes.var.square (expand) - *terraform.nodeExpandModuleVariable
+  module.shapes.output.circle_area (expand) - *terraform.nodeExpandOutput
+    module.shapes (expand) - *terraform.nodeValidateModule
+    module.shapes.module.circle.output.area (expand) - *terraform.nodeExpandOutput
+  module.shapes.output.square_area (expand) - *terraform.nodeExpandOutput
+    module.shapes (expand) - *terraform.nodeValidateModule
+  module.shapes.var.circle (expand) - *terraform.nodeExpandModuleVariable
+    module.shapes (expand) - *terraform.nodeValidateModule
+  module.shapes.var.square (expand) - *terraform.nodeExpandModuleVariable
+    module.shapes (expand) - *terraform.nodeValidateModule
+  ------
+2020/06/07 11:35:59 [TRACE] Executing graph transform *terraform.TargetsTransformer
+2020/06/07 11:35:59 [TRACE] Completed graph transform *terraform.TargetsTransformer (no changes)
+2020/06/07 11:35:59 [TRACE] Executing graph transform *terraform.ForcedCBDTransformer
+2020/06/07 11:35:59 [TRACE] Completed graph transform *terraform.ForcedCBDTransformer (no changes)
+2020/06/07 11:35:59 [TRACE] Executing graph transform *terraform.CloseProviderTransformer
+2020/06/07 11:35:59 [TRACE] Completed graph transform *terraform.CloseProviderTransformer (no changes)
+2020/06/07 11:35:59 [TRACE] Executing graph transform *terraform.CloseProvisionerTransformer
+2020/06/07 11:35:59 [TRACE] Completed graph transform *terraform.CloseProvisionerTransformer (no changes)
+2020/06/07 11:35:59 [TRACE] Executing graph transform *terraform.CloseRootModuleTransformer
+2020/06/07 11:35:59 [TRACE] Completed graph transform *terraform.CloseRootModuleTransformer with new graph:
+  meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    module.shapes (close) - *terraform.nodeCloseModule
+    module.shapes (expand) - *terraform.nodeValidateModule
+    module.shapes.module.circle (close) - *terraform.nodeCloseModule
+    module.shapes.module.circle (expand) - *terraform.nodeValidateModule
+    module.shapes.module.circle.local.pi (expand) - *terraform.nodeExpandLocal
+    module.shapes.module.circle.output.area (expand) - *terraform.nodeExpandOutput
+    module.shapes.module.circle.var.radius (expand) - *terraform.nodeExpandModuleVariable
+    module.shapes.module.square.var.length (expand) - *terraform.nodeExpandModuleVariable
+    module.shapes.output.circle_area (expand) - *terraform.nodeExpandOutput
+    module.shapes.output.square_area (expand) - *terraform.nodeExpandOutput
+    module.shapes.var.circle (expand) - *terraform.nodeExpandModuleVariable
+    module.shapes.var.square (expand) - *terraform.nodeExpandModuleVariable
+  module.shapes (close) - *terraform.nodeCloseModule
+    module.shapes (expand) - *terraform.nodeValidateModule
+    module.shapes.module.circle (close) - *terraform.nodeCloseModule
+    module.shapes.output.circle_area (expand) - *terraform.nodeExpandOutput
+    module.shapes.output.square_area (expand) - *terraform.nodeExpandOutput
+    module.shapes.var.circle (expand) - *terraform.nodeExpandModuleVariable
+    module.shapes.var.square (expand) - *terraform.nodeExpandModuleVariable
+  module.shapes (expand) - *terraform.nodeValidateModule
+  module.shapes.module.circle (close) - *terraform.nodeCloseModule
+    module.shapes.module.circle (expand) - *terraform.nodeValidateModule
+    module.shapes.module.circle.local.pi (expand) - *terraform.nodeExpandLocal
+    module.shapes.module.circle.output.area (expand) - *terraform.nodeExpandOutput
+    module.shapes.module.circle.var.radius (expand) - *terraform.nodeExpandModuleVariable
+  module.shapes.module.circle (expand) - *terraform.nodeValidateModule
+    module.shapes (expand) - *terraform.nodeValidateModule
+  module.shapes.module.circle.local.pi (expand) - *terraform.nodeExpandLocal
+    module.shapes.module.circle (expand) - *terraform.nodeValidateModule
+  module.shapes.module.circle.output.area (expand) - *terraform.nodeExpandOutput
+    module.shapes.module.circle (expand) - *terraform.nodeValidateModule
+    module.shapes.module.circle.local.pi (expand) - *terraform.nodeExpandLocal
+  module.shapes.module.circle.var.radius (expand) - *terraform.nodeExpandModuleVariable
+    module.shapes.module.circle (expand) - *terraform.nodeValidateModule
+    module.shapes.var.circle (expand) - *terraform.nodeExpandModuleVariable
+  module.shapes.module.square.var.length (expand) - *terraform.nodeExpandModuleVariable
+    module.shapes.var.square (expand) - *terraform.nodeExpandModuleVariable
+  module.shapes.output.circle_area (expand) - *terraform.nodeExpandOutput
+    module.shapes (expand) - *terraform.nodeValidateModule
+    module.shapes.module.circle.output.area (expand) - *terraform.nodeExpandOutput
+  module.shapes.output.square_area (expand) - *terraform.nodeExpandOutput
+    module.shapes (expand) - *terraform.nodeValidateModule
+  module.shapes.var.circle (expand) - *terraform.nodeExpandModuleVariable
+    module.shapes (expand) - *terraform.nodeValidateModule
+  module.shapes.var.square (expand) - *terraform.nodeExpandModuleVariable
+    module.shapes (expand) - *terraform.nodeValidateModule
+  root - *terraform.nodeCloseModule
+    meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+  ------
+2020/06/07 11:35:59 [TRACE] Executing graph transform *terraform.TransitiveReductionTransformer
+2020/06/07 11:35:59 [TRACE] Completed graph transform *terraform.TransitiveReductionTransformer with new graph:
+  meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    module.shapes (close) - *terraform.nodeCloseModule
+    module.shapes.module.square.var.length (expand) - *terraform.nodeExpandModuleVariable
+  module.shapes (close) - *terraform.nodeCloseModule
+    module.shapes.module.circle (close) - *terraform.nodeCloseModule
+    module.shapes.output.circle_area (expand) - *terraform.nodeExpandOutput
+    module.shapes.output.square_area (expand) - *terraform.nodeExpandOutput
+    module.shapes.var.square (expand) - *terraform.nodeExpandModuleVariable
+  module.shapes (expand) - *terraform.nodeValidateModule
+  module.shapes.module.circle (close) - *terraform.nodeCloseModule
+    module.shapes.module.circle.output.area (expand) - *terraform.nodeExpandOutput
+    module.shapes.module.circle.var.radius (expand) - *terraform.nodeExpandModuleVariable
+  module.shapes.module.circle (expand) - *terraform.nodeValidateModule
+    module.shapes (expand) - *terraform.nodeValidateModule
+  module.shapes.module.circle.local.pi (expand) - *terraform.nodeExpandLocal
+    module.shapes.module.circle (expand) - *terraform.nodeValidateModule
+  module.shapes.module.circle.output.area (expand) - *terraform.nodeExpandOutput
+    module.shapes.module.circle.local.pi (expand) - *terraform.nodeExpandLocal
+  module.shapes.module.circle.var.radius (expand) - *terraform.nodeExpandModuleVariable
+    module.shapes.module.circle (expand) - *terraform.nodeValidateModule
+    module.shapes.var.circle (expand) - *terraform.nodeExpandModuleVariable
+  module.shapes.module.square.var.length (expand) - *terraform.nodeExpandModuleVariable
+    module.shapes.var.square (expand) - *terraform.nodeExpandModuleVariable
+  module.shapes.output.circle_area (expand) - *terraform.nodeExpandOutput
+    module.shapes.module.circle.output.area (expand) - *terraform.nodeExpandOutput
+  module.shapes.output.square_area (expand) - *terraform.nodeExpandOutput
+    module.shapes (expand) - *terraform.nodeValidateModule
+  module.shapes.var.circle (expand) - *terraform.nodeExpandModuleVariable
+    module.shapes (expand) - *terraform.nodeValidateModule
+  module.shapes.var.square (expand) - *terraform.nodeExpandModuleVariable
+    module.shapes (expand) - *terraform.nodeValidateModule
+  root - *terraform.nodeCloseModule
+    meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+  ------
+2020/06/07 11:35:59 [DEBUG] Starting graph walk: walkValidate
+2020/06/07 11:35:59 [TRACE] dag/walk: visiting "module.shapes (expand)"
+2020/06/07 11:35:59 [TRACE] vertex "module.shapes (expand)": starting visit (*terraform.nodeValidateModule)
+2020/06/07 11:35:59 [TRACE] vertex "module.shapes (expand)": evaluating
+2020/06/07 11:35:59 [TRACE] [walkValidate] Entering eval tree: module.shapes (expand)
+2020/06/07 11:35:59 [TRACE] eval: *terraform.evalValidateModule
+2020/06/07 11:35:59 [TRACE] [walkValidate] Exiting eval tree: module.shapes (expand)
+2020/06/07 11:35:59 [TRACE] vertex "module.shapes (expand)": visit complete
+2020/06/07 11:35:59 [TRACE] dag/walk: visiting "module.shapes.module.circle (expand)"
+2020/06/07 11:35:59 [TRACE] vertex "module.shapes.module.circle (expand)": starting visit (*terraform.nodeValidateModule)
+2020/06/07 11:35:59 [TRACE] vertex "module.shapes.module.circle (expand)": evaluating
+2020/06/07 11:35:59 [TRACE] [walkValidate] Entering eval tree: module.shapes.module.circle (expand)
+2020/06/07 11:35:59 [TRACE] dag/walk: visiting "module.shapes.var.circle (expand)"
+2020/06/07 11:35:59 [TRACE] eval: *terraform.evalValidateModule
+2020/06/07 11:35:59 [TRACE] vertex "module.shapes.var.circle (expand)": starting visit (*terraform.nodeExpandModuleVariable)
+2020/06/07 11:35:59 [TRACE] dag/walk: visiting "module.shapes.var.square (expand)"
+2020/06/07 11:35:59 [TRACE] vertex "module.shapes.var.circle (expand)": expanding dynamic subgraph
+2020/06/07 11:35:59 [TRACE] vertex "module.shapes.var.square (expand)": starting visit (*terraform.nodeExpandModuleVariable)
+2020/06/07 11:35:59 [TRACE] vertex "module.shapes.var.square (expand)": expanding dynamic subgraph
+2020/06/07 11:35:59 [TRACE] dag/walk: visiting "module.shapes.output.square_area (expand)"
+2020/06/07 11:35:59 [TRACE] vertex "module.shapes.output.square_area (expand)": starting visit (*terraform.nodeExpandOutput)
+2020/06/07 11:35:59 [TRACE] vertex "module.shapes.output.square_area (expand)": expanding dynamic subgraph
+2020/06/07 11:35:59 [TRACE] Expanding output: adding module.shapes.output.square_area as *terraform.NodeApplyableOutput
+2020/06/07 11:35:59 [TRACE] vertex "module.shapes.var.square (expand)": entering dynamic subgraph
+2020/06/07 11:35:59 [TRACE] vertex "module.shapes.var.circle (expand)": entering dynamic subgraph
+2020/06/07 11:35:59 [TRACE] vertex "module.shapes.output.square_area (expand)": entering dynamic subgraph
+2020/06/07 11:35:59 [TRACE] [walkValidate] Exiting eval tree: module.shapes.module.circle (expand)
+2020/06/07 11:35:59 [TRACE] vertex "module.shapes.module.circle (expand)": visit complete
+2020/06/07 11:35:59 [TRACE] dag/walk: visiting "module.shapes.module.circle.local.pi (expand)"
+2020/06/07 11:35:59 [TRACE] vertex "module.shapes.module.circle.local.pi (expand)": starting visit (*terraform.nodeExpandLocal)
+2020/06/07 11:35:59 [TRACE] vertex "module.shapes.module.circle.local.pi (expand)": expanding dynamic subgraph
+2020/06/07 11:35:59 [TRACE] Expanding local: adding module.shapes.module.circle.local.pi as *terraform.NodeLocal
+2020/06/07 11:35:59 [TRACE] vertex "module.shapes.module.circle.local.pi (expand)": entering dynamic subgraph
+2020/06/07 11:35:59 [TRACE] dag/walk: visiting "module.shapes.var.circle"
+2020/06/07 11:35:59 [TRACE] dag/walk: visiting "module.shapes.var.square"
+2020/06/07 11:35:59 [TRACE] vertex "module.shapes.var.circle": starting visit (*terraform.nodeModuleVariable)
+2020/06/07 11:35:59 [TRACE] vertex "module.shapes.var.square": starting visit (*terraform.nodeModuleVariable)
+2020/06/07 11:35:59 [TRACE] vertex "module.shapes.var.circle": evaluating
+2020/06/07 11:35:59 [TRACE] vertex "module.shapes.var.square": evaluating
+2020/06/07 11:35:59 [TRACE] dag/walk: visiting "module.shapes.output.square_area"
+2020/06/07 11:35:59 [TRACE] [walkValidate] Entering eval tree: module.shapes.var.square
+2020/06/07 11:35:59 [TRACE] vertex "module.shapes.output.square_area": starting visit (*terraform.NodeApplyableOutput)
+2020/06/07 11:35:59 [TRACE] dag/walk: visiting "module.shapes.module.circle.local.pi"
+2020/06/07 11:35:59 [TRACE] eval: *terraform.EvalSequence
+2020/06/07 11:35:59 [TRACE] eval: terraform.EvalNoop
+2020/06/07 11:35:59 [TRACE] eval: *terraform.EvalOpFilter
+2020/06/07 11:35:59 [TRACE] eval: *terraform.EvalModuleCallArgument
+2020/06/07 11:35:59 [TRACE] vertex "module.shapes.output.square_area": evaluating
+2020/06/07 11:35:59 [TRACE] vertex "module.shapes.module.circle.local.pi": starting visit (*terraform.NodeLocal)
+2020/06/07 11:35:59 [TRACE] [walkValidate] Entering eval tree: module.shapes.output.square_area
+2020/06/07 11:35:59 [TRACE] eval: *terraform.EvalSequence
+2020/06/07 11:35:59 [TRACE] eval: *terraform.EvalOpFilter
+2020/06/07 11:35:59 [TRACE] vertex "module.shapes.module.circle.local.pi": evaluating
+2020/06/07 11:35:59 [TRACE] eval: *terraform.EvalWriteOutput
+2020/06/07 11:35:59 [TRACE] [walkValidate] Entering eval tree: module.shapes.module.circle.local.pi
+2020/06/07 11:35:59 [TRACE] eval: *terraform.EvalLocal
+2020/06/07 11:35:59 [TRACE] [walkValidate] Entering eval tree: module.shapes.var.circle
+2020/06/07 11:35:59 [TRACE] eval: *terraform.EvalSequence
+2020/06/07 11:35:59 [TRACE] eval: terraform.EvalNoop
+2020/06/07 11:35:59 [TRACE] eval: *terraform.EvalOpFilter
+2020/06/07 11:35:59 [TRACE] eval: *terraform.EvalModuleCallArgument
+2020/06/07 11:35:59 [TRACE] eval: *terraform.EvalSetModuleCallArguments
+2020/06/07 11:35:59 [TRACE] eval: *terraform.evalVariableValidations
+2020/06/07 11:35:59 [TRACE] evalVariableValidations: not active for module.shapes.var.square, so skipping
+2020/06/07 11:35:59 [TRACE] [walkValidate] Exiting eval tree: module.shapes.var.square
+2020/06/07 11:35:59 [TRACE] vertex "module.shapes.var.square": visit complete
+2020/06/07 11:35:59 [ERROR] eval: *terraform.EvalWriteOutput, err: Unsupported attribute: This object does not have an attribute named "area".
+2020/06/07 11:35:59 [ERROR] eval: *terraform.EvalOpFilter, err: Unsupported attribute: This object does not have an attribute named "area".
+2020/06/07 11:35:59 [TRACE] vertex "module.shapes.var.square (expand)": dynamic subgraph completed successfully
+2020/06/07 11:35:59 [ERROR] eval: *terraform.EvalSequence, err: Unsupported attribute: This object does not have an attribute named "area".
+2020/06/07 11:35:59 [TRACE] vertex "module.shapes.var.square (expand)": visit complete
+2020/06/07 11:35:59 [TRACE] [walkValidate] Exiting eval tree: module.shapes.output.square_area
+2020/06/07 11:35:59 [TRACE] vertex "module.shapes.output.square_area": visit complete
+2020/06/07 11:35:59 [TRACE] [walkValidate] Exiting eval tree: module.shapes.module.circle.local.pi
+2020/06/07 11:35:59 [TRACE] dag/walk: visiting "module.shapes.module.square.var.length (expand)"
+2020/06/07 11:35:59 [TRACE] vertex "module.shapes.module.circle.local.pi": visit complete
+2020/06/07 11:35:59 [TRACE] vertex "module.shapes.output.square_area (expand)": dynamic subgraph encountered errors
+2020/06/07 11:35:59 [TRACE] vertex "module.shapes.module.square.var.length (expand)": starting visit (*terraform.nodeExpandModuleVariable)
+2020/06/07 11:35:59 [TRACE] vertex "module.shapes.module.circle.local.pi (expand)": dynamic subgraph completed successfully
+2020/06/07 11:35:59 [TRACE] vertex "module.shapes.output.square_area (expand)": visit complete
+2020/06/07 11:35:59 [TRACE] vertex "module.shapes.module.square.var.length (expand)": expanding dynamic subgraph
+2020/06/07 11:35:59 [TRACE] vertex "module.shapes.module.circle.local.pi (expand)": visit complete
+2020/06/07 11:35:59 [TRACE] vertex "module.shapes.module.square.var.length (expand)": visit complete
+2020/06/07 11:35:59 [TRACE] dag/walk: visiting "module.shapes.module.circle.output.area (expand)"
+panic: no expansion has been registered for module.shapes.module.square
+
+goroutine 80 [running]:
+github.com/hashicorp/terraform/instances.(*expanderModule).moduleInstances(0xc00000c8c0, 0xc000278170, 0x1, 0x1, 0xc000338b50, 0x1, 0x4, 0xc000090af8, 0x31, 0x2200000029)
+	/home/circleci/project/project/instances/expander.go:267 +0xb72
+github.com/hashicorp/terraform/instances.(*expanderModule).moduleInstances(0xc00000c800, 0xc000278160, 0x2, 0x2, 0xc000525b50, 0x0, 0x4, 0x4f21f8, 0x0, 0x3b)
+	/home/circleci/project/project/instances/expander.go:279 +0x2c9
+github.com/hashicorp/terraform/instances.(*Expander).ExpandModule(0xc00000c820, 0xc000278160, 0x2, 0x2, 0x0, 0x0, 0x0)
+	/home/circleci/project/project/instances/expander.go:116 +0x108
+github.com/hashicorp/terraform/terraform.(*nodeExpandModuleVariable).DynamicExpand(0xc000093a80, 0x23ae440, 0xc000246270, 0x1, 0x1, 0x1)
+	/home/circleci/project/project/terraform/node_module_variable.go:42 +0x94
+github.com/hashicorp/terraform/terraform.(*Graph).walk.func1(0x1d18b20, 0xc000093a80, 0x0, 0x0, 0x0)
+	/home/circleci/project/project/terraform/graph.go:84 +0x4d8
+github.com/hashicorp/terraform/dag.(*Walker).walkVertex(0xc00011e1e0, 0x1d18b20, 0xc000093a80, 0xc0002fa680)
+	/home/circleci/project/project/dag/walk.go:387 +0x357
+created by github.com/hashicorp/terraform/dag.(*Walker).Update
+	/home/circleci/project/project/dag/walk.go:309 +0x11d7
